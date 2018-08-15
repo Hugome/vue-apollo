@@ -1799,6 +1799,11 @@ var CApolloMutation = {
       default: undefined
     },
 
+    clientId: {
+      type: String,
+      default: undefined
+    },
+
     tag: {
       type: String,
       default: 'div'
@@ -1821,6 +1826,7 @@ var CApolloMutation = {
       this.error = null;
       this.$apollo.mutate(_extends({
         mutation: this.mutation,
+        client: this.clientId,
         variables: this.variables,
         optimisticResponse: this.optimisticResponse,
         update: this.update,
